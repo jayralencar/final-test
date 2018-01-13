@@ -1,17 +1,35 @@
 {
   "name": "final-test",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jayralencar/final-test.git"
+  },
+  "keywords": [
+    "cep",
+    "zip"
+  ],
+  "author": "@jayralencar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jayralencar/final-test/issues"
+  },
+  "homepage": "https://github.com/jayralencar/final-test#readme",
   "dependencies": {
+    "apidoc": "^0.17.6",
     "body-parser": "~1.18.2",
-    "cookie-parser": "~1.4.3",
+    "cheerio": "^1.0.0-rc.2",
+    "cookie-parser": "^1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.0",
-    "serve-favicon": "~2.4.5"
+    "jade": "^1.11.0",
+    "mongoose": "^4.13.9",
+    "morgan": "^1.9.0",
+    "request": "^2.83.0",
+    "serve-favicon": "^2.4.5"
   }
 }
