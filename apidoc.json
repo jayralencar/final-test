@@ -1,0 +1,8 @@
+{
+    "name": "FinalTest API documentation",
+    "version": "0.0.3",
+    "description": "List manager",
+    "template": {
+        "forceLanguage": "en"
+    }
+}

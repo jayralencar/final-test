@@ -4,7 +4,7 @@ _post = require('../models/posts');
 
 function Post(){}
 
-Post.prototype.get = function(req, res) {
+Post.prototype.all = function(req, res) {
 	getTypiCodePosts().then(data=>{
 		getIFPEPosts().then(a=>{
 			getPosts().then(data=>{
@@ -14,8 +14,8 @@ Post.prototype.get = function(req, res) {
 	}).catch(e=>{
 		res.status(400).send(data);
 	});
-	
 };
+
 
 function getTypiCodePosts(){
 	var promises = [];
