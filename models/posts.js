@@ -7,7 +7,6 @@ var Schema = mongoose.Schema,
  
 var Post = new Schema({
     idPost    : ObjectId,
-    id 		  : Number,
     title     : String,
     body      : String,
 });
