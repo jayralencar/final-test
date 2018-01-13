@@ -1,6 +1,6 @@
 define({
   "name": "FinalTest API documentation",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "List manager",
   "template": {
     "forceLanguage": "en"
@@ -10,7 +10,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2018-01-13T18:01:29.378Z",
+    "time": "2018-01-13T23:56:51.081Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }

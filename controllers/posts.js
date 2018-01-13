@@ -16,6 +16,13 @@ Post.prototype.all = function(req, res) {
 	});
 };
 
+Post.prototype.find = function(req, res){
+	_post.find({_id: req.params._id}, function(err, data){
+		if(err) res.status(404).send("Post not found");
+		res.status(200).send(data);
+	});
+}
+
 
 function getTypiCodePosts(){
 	var promises = [];
