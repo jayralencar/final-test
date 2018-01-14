@@ -1,5 +1,5 @@
 define({
-  "name": "FinalTest API documentation",
+  "name": "Blog Admin API documentation",
   "version": "0.0.7",
   "description": "List manager",
   "template": {
@@ -10,7 +10,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2018-01-14T17:39:58.386Z",
+    "time": "2018-01-14T23:52:51.717Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }

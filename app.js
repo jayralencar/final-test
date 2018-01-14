@@ -55,10 +55,6 @@ app.use(function(err, req, res, next) {
 });
 
 importPost.typicode();
-
-// import from IFPE with 1 hour interval
-setInterval(function(){
-	importPost.ifce();	
-},3600000);
+importPost.ifce();
 
 module.exports = app;

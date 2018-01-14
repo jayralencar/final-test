@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var posts = require("../controllers/posts.js");
-var newPostMiddleware = require("../middleware/newPost");
+var validData = require("../middleware/validData");
 
 /**
 * @api {get} /api/posts Lista all posts
@@ -67,7 +67,7 @@ router.get("/posts/:_id", posts.find);
  *@apiErrorExample {json} List error
  * HTTP/1.1 500 Internal Error
 */
-router.post("/posts", newPostMiddleware, posts.new);
+router.post("/posts", validData, posts.new);
 
 /**
 * @api {put} /api/posts/:_id update post information
@@ -88,7 +88,7 @@ router.post("/posts", newPostMiddleware, posts.new);
  *@apiErrorExample {json} List error
  * HTTP/1.1 500 Internal Error
 */
-router.put("/posts/:_id", newPostMiddleware, posts.update);
+router.put("/posts/:_id", validData, posts.update);
 
 /**
 * @api {delete} /api/posts/:_id Delete a post

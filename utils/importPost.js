@@ -22,7 +22,7 @@ importPost.prototype.typicode = function(){
 	return Promise.all(promises);
 }
 
-importPost.prototype.getIFPEPosts = function(){
+importPost.prototype.ifce = function(){
 	var promises = [];
 	request('http://www.ifpe.edu.br/noticias', function (error, response, html) {
 		if (!error && response.statusCode == 200) {
@@ -31,15 +31,18 @@ importPost.prototype.getIFPEPosts = function(){
 				promises.push(new Promise((resolve, reject)=>{
 					var data ={
 						title: $(el).find('.tileHeadline').children('a').text(),
-						body: $(el).children('p').text(),
+						body: $(el).find('span').text()
 					};	
+					console.log(data)
 					savePost(data).then(d=>{
 						resolve(d)
 					}).catch(e=>{
 						reject(e);
-					})
+					});
 				}));
 			});
+		}else{
+			reject(error)
 		}
 	});
 
