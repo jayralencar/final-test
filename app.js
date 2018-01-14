@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var validator = require('express-validator');
 
+var importPost = require("./utils/importPost");
+
 var index = require('./routes/index');
 var api = require('./routes/api');
 
@@ -24,6 +26,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'doc')));
+app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/'));
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use('/popper', express.static(__dirname + '/node_modules/popper.js/dist/'));
+app.use('/angular', express.static(__dirname + '/node_modules/angular/'));
+app.use('/angular-route', express.static(__dirname + '/node_modules/angular-route/'));
+app.use('/angular-utils-pagination', express.static(__dirname + '/node_modules/angular-utils-pagination/'));
 
 app.use('/', index);
 app.use('/api', api);
@@ -45,5 +53,12 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.send(err.message);
 });
+
+importPost.typicode();
+
+// import from IFPE with 1 hour interval
+setInterval(function(){
+	importPost.ifce();	
+},3600000);
 
 module.exports = app;

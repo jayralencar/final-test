@@ -1,0 +1,15 @@
+var app = angular.module("app",['ngRoute','angularUtils.directives.dirPagination']);
+
+app.value("api","http://localhost:3000/api");
+
+app.config(function(paginationTemplateProvider) {
+	paginationTemplateProvider.setPath('app/views/dirPagination.tpl.html');
+});
+
+app.config(function($routeProvider, $locationProvider){
+	$locationProvider.hashPrefix('');
+	$routeProvider.when("/",{
+		templateUrl: "app/views/home.html",
+		controller: "homeController"
+	});
+});
