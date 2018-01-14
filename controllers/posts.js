@@ -7,12 +7,13 @@ function Post(){}
 Post.prototype.all = function(req, res) {
 	getTypiCodePosts().then(data=>{
 		getIFPEPosts().then(a=>{
-			getPosts().then(data=>{
-				res.status(200).send(data);
-			})
+			
 		}).catch(e=>{});
 	}).catch(e=>{
 		res.status(400).send(data);
+	});
+	getPosts().then(data=>{
+		res.status(200).send(data);
 	});
 };
 
@@ -21,6 +22,14 @@ Post.prototype.find = function(req, res){
 		if(err) res.status(404).send("Post not found");
 		res.status(200).send(data);
 	});
+}
+
+Post.prototype.new = function(req, res){
+	savePost(req.body).then(post=>{
+		res.send(post);
+	}).catch(err=>{
+		res.send(err);
+	})
 }
 
 
