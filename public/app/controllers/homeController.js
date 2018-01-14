@@ -11,4 +11,10 @@ app.controller("homeController", function($scope, postService) {
 		});
 	}
 
+	$scope.delete = function(post){
+		postService.delete(post._id).then(function(res){
+			$scope.getPosts();
+		});
+	}
+
 });

@@ -13,6 +13,9 @@ app.factory("postService", function($http, api) {
 		},
 		update: function(id, data){
 			return $http.put(api+"/posts/"+id, data);
+		},
+		delete: function(id){
+			return $http.delete(api+"/posts/"+id);
 		}
 	}
 });
