@@ -11,5 +11,8 @@ app.config(function($routeProvider, $locationProvider){
 	$routeProvider.when("/",{
 		templateUrl: "app/views/home.html",
 		controller: "homeController"
+	}).when('/novo-post',{
+		templateUrl: "app/views/post.html",
+		controller: "newPostController"
 	});
 });

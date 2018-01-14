@@ -21,8 +21,8 @@ Post.prototype.find = function(req, res){
 Post.prototype.new = function(req, res){
 	var post = new _post(req.body);
 	post.save((err, data)=>{
-		if(err) reject(err);
-		resolve(data);
+		if(err) res.status(500).send(err);
+		res.status(200).send(data);
 	});
 }
 
