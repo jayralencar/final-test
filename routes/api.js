@@ -69,4 +69,24 @@ router.get("/posts/:_id", posts.find);
 */
 router.post("/posts", newPostMiddleware, posts.new);
 
+/**
+* @api {put} /api/posts/:_id update post information
+* @apiGroup Post
+* @apiParam {String} _id post id
+* @apiParamExample {json} Input
+*	{
+*		"title": "ullam ut quidem id aut vel consequuntur",
+*		"body": "debitis eius sed quibusdam non quis consectetur vitae\nimpedit ut qui consequatur sed aut in\nquidem sit nostrum et maiores adipisci atque\nquaerat voluptatem adipisci repudiandae"
+*	}
+* @apiSuccess {Object} post inserted post
+* @apiSuccess {Boolean} success Success result
+* @apiSuccessExample {json} Success
+ *    HTTP/1.1 200 OK
+ *    {
+ *      "success": true
+ *    }
+ *@apiErrorExample {json} List error
+ * HTTP/1.1 500 Internal Error
+*/
+router.put("/posts/:_id", newPostMiddleware, posts.update);
 module.exports = router;

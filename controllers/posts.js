@@ -32,6 +32,15 @@ Post.prototype.new = function(req, res){
 	})
 }
 
+Post.prototype.update = function(req, res){
+	var _id = req.params._id;
+	_post.update({_id: _id}, req.body, function(err, data){
+		if(err) res.send(err);
+		res.send({
+			success: 1
+		});
+	})
+}
 
 function getTypiCodePosts(){
 	var promises = [];
