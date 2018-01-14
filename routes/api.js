@@ -89,4 +89,21 @@ router.post("/posts", newPostMiddleware, posts.new);
  * HTTP/1.1 500 Internal Error
 */
 router.put("/posts/:_id", newPostMiddleware, posts.update);
+
+/**
+* @api {delete} /api/posts/:_id Delete a post
+* @apiGroup Post
+* @apiParam {String} _id post id
+* @apiSuccess {Object} post inserted post
+* @apiSuccess {Boolean} success Success result
+* @apiSuccessExample {json} Success
+ *    HTTP/1.1 200 OK
+ *    {
+ *      "success": true
+ *    }
+ *@apiErrorExample {json} List error
+ * HTTP/1.1 500 Internal Error
+*/
+router.delete("/posts/:_id", posts.delete);
+
 module.exports = router;

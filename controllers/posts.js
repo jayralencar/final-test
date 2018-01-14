@@ -29,14 +29,24 @@ Post.prototype.new = function(req, res){
 		res.send(post);
 	}).catch(err=>{
 		res.send(err);
-	})
+	});
 }
 
 Post.prototype.update = function(req, res){
 	var _id = req.params._id;
 	_post.update({_id: _id}, req.body, function(err, data){
-		if(err) res.send(err);
-		res.send({
+		if(err) res.status(500).send(err);
+		res.status(200).send({
+			success: 1
+		});
+	});
+}
+
+Post.prototype.delete = function(req, res){
+	var _id = req.params._id;
+	_post.remove({_id: _id}, function(err){
+		if(err) res.status(500).send(err);
+		res.status(200).send({
 			success: 1
 		});
 	})
