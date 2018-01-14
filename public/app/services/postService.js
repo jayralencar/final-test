@@ -7,6 +7,12 @@ app.factory("postService", function($http, api) {
 		},
 		new: function(data){
 			return $http.post(api+"/posts", data);
+		},
+		get: function(id){
+			return $http.get(api+"/posts/"+id);
+		},
+		update: function(id, data){
+			return $http.put(api+"/posts/"+id, data);
 		}
 	}
 });

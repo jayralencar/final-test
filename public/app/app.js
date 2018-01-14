@@ -14,5 +14,8 @@ app.config(function($routeProvider, $locationProvider){
 	}).when('/novo-post',{
 		templateUrl: "app/views/post.html",
 		controller: "newPostController"
-	});
+	}).when("/post/:id",{
+		templateUrl: "app/views/post.html",
+		controller: "editPostController"
+	})
 });
