@@ -1,6 +1,6 @@
 var app = angular.module("app",['ngRoute','angularUtils.directives.dirPagination']);
 
-app.value("api","http://localhost:3000/api");
+app.value("api","http://localhost:8000/api");
 
 app.config(function(paginationTemplateProvider) {
 	paginationTemplateProvider.setPath('app/views/dirPagination.tpl.html');
