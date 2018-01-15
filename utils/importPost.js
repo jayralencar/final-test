@@ -15,8 +15,8 @@ importPost.prototype.typicode = function(){
 				delete item.userId;
 				savePost(item).then((newPost)=>{
 					resolve();
-				})
-			}))
+				});
+			}));
 		})
 	});
 	return Promise.all(promises);
