@@ -1,7 +1,7 @@
 # BlogAdmin
 
 ```
-https://github.com/jayralencar/final-test
+git https://github.com/jayralencar/final-test
 ```
 
 ```
